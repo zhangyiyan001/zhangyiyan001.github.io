@@ -14,12 +14,16 @@ const translations = {
         // Hero Section
         hero: {
             welcome: "Welcome to Yiyan Zhang's Academic Homepage",
-            title: "PhD Student | School of Information Science and Engineering",
-            university: "Hohai University",
-            intro1: "I am a PhD student at the",
+            title: "Faculty Member | School of Artificial Intelligence and Computer Science",
+            university: "Nantong University",
+            profileName: "Yiyan Zhang",
+            profileTitle: "Faculty Member",
+            profileUniversity: "Nantong University",
+            ntuCollege: "School of Artificial Intelligence and Computer Science, Nantong University",
+            intro1: "I am currently a faculty member at the",
             intro2: ", supervised by",
             intro3: "and",
-            intro4: "My research focuses on developing advanced artificial intelligence methods for remote sensing image interpretation, integrating deep learning techniques with remote sensing data analysis to develop intelligent systems for automated image interpretation.",
+            intro4: "My research focuses on integrating deep learning techniques with remote sensing data analysis to design intelligent image processing algorithms and apply artificial intelligence methods to remote sensing image interpretation.",
             collegeOf: "College of Information Science and Engineering"
         },
         // Buttons
@@ -112,12 +116,16 @@ const translations = {
         // Hero Section
         hero: {
             welcome: "欢迎来到张亦严的学术主页",
-            title: "博士研究生 | 信息科学与工程学院",
-            university: "河海大学",
+            title: "教师 | 人工智能与计算机学院",
+            university: "南通大学",
+            profileName: "张亦严",
+            profileTitle: "教师",
+            profileUniversity: "南通大学",
+            ntuCollege: "南通大学人工智能与计算机学院",
             intro1: "我是",
             intro2: "的博士研究生，导师为",
             intro3: "教授和",
-            intro4: "教授。我的研究专注于开发先进的人工智能方法用于遥感图像解译，将深度学习技术与遥感数据分析相结合，设计智能化的遥感图像解译算法。",
+            intro4: "我的研究专注于将深度学习技术与遥感数据分析相结合，设计智能化的图像处理算法，将人工智能方法用于遥感图像解译工作。",
             collegeOf: "信息科学与工程学院"
         },
         // Buttons
@@ -326,31 +334,55 @@ function updateHeroSection(t) {
     if (university) {
         university.textContent = t.hero.university;
     }
+
+    const profileName = document.querySelector('.profile-name');
+    if (profileName) {
+        profileName.textContent = t.hero.profileName;
+    }
+
+    const profileTitle = document.querySelector('.profile-title');
+    if (profileTitle) {
+        profileTitle.textContent = t.hero.profileTitle;
+    }
+
+    const profileUniversity = document.querySelector('.profile-university');
+    if (profileUniversity) {
+        const icon = profileUniversity.querySelector('i');
+        profileUniversity.innerHTML = `${icon ? icon.outerHTML : '<i class="fas fa-university me-2"></i>'}\n                                ${t.hero.profileUniversity}`;
+    }
     
     // Introduction paragraph - preserving links
     const introPara = document.querySelector('.hero-content p');
     if (introPara) {
+        const ntuCollegeLink = introPara.querySelector('a[href="https://ai.ntu.edu.cn/"]');
+        const dingLink = introPara.querySelector('a[href*="ai.ntu.edu.cn/2024/0817/c9718a246514/page.htm"]');
         const collegeLink = introPara.querySelector('a[href*="ise.hhu.edu.cn"]');
         const hhuLink = introPara.querySelector('a[href*="www.hhu.edu.cn"]');
         const prof1Link = introPara.querySelector('a[href*="ghm"]');
         const prof2Link = introPara.querySelector('a[href*="lcm"]');
-        
-        if (collegeLink && hhuLink && prof1Link && prof2Link) {
+
+        if (ntuCollegeLink && dingLink && collegeLink && hhuLink && prof1Link && prof2Link) {
             // Clone links to preserve attributes
+            const ntuCollegeClone = ntuCollegeLink.cloneNode(true);
+            const dingClone = dingLink.cloneNode(true);
             const collegeClone = collegeLink.cloneNode(true);
             const hhuClone = hhuLink.cloneNode(true);
             const prof1Clone = prof1Link.cloneNode(true);
             const prof2Clone = prof2Link.cloneNode(true);
-            
+
             // Update link text
+            ntuCollegeClone.textContent = t.hero.ntuCollege;
+            dingClone.textContent = currentLanguage === 'zh' ? '丁卫平院长' : 'Prof. Weiping Ding (丁卫平)';
             collegeClone.textContent = t.hero.collegeOf;
             hhuClone.textContent = currentLanguage === 'zh' ? '河海大学' : 'Hohai University';
             // Keep professor names as is (no translation)
-            
+
             // Rebuild the paragraph based on language
             if (currentLanguage === 'zh') {
                 introPara.innerHTML = `
-                    我是${hhuClone.outerHTML}${collegeClone.outerHTML}的博士研究生，导师为
+                    我目前是${ntuCollegeClone.outerHTML}的教师，并加入了不确定性人工智能与脑认知研究团队，团队负责人为
+                    ${dingClone.outerHTML}。
+                    博士阶段毕业于${hhuClone.outerHTML}${collegeClone.outerHTML}，导师为
                     ${prof1Clone.outerHTML}
                     教授和
                     ${prof2Clone.outerHTML}研究员。
@@ -358,12 +390,15 @@ function updateHeroSection(t) {
                 `;
             } else {
                 introPara.innerHTML = `
-                    I am a PhD student at the ${collegeClone.outerHTML}, ${hhuClone.outerHTML}, supervised by 
-                    ${prof1Clone.outerHTML} 
-                    and 
+                    I am currently a faculty member at the ${ntuCollegeClone.outerHTML},
+                    and a member of the Uncertainty Artificial Intelligence and Brain Cognition Research Team led by
+                    ${dingClone.outerHTML}.
+                    I received my Ph.D. from the ${collegeClone.outerHTML}, ${hhuClone.outerHTML}, under the supervision of
+                    ${prof1Clone.outerHTML}
+                    and
                     ${prof2Clone.outerHTML}.
-                    My research focuses on developing advanced artificial intelligence methods for remote sensing image interpretation, 
-                    integrating deep learning techniques with remote sensing data analysis to develop intelligent systems for automated image interpretation.
+                    My research focuses on integrating deep learning techniques with remote sensing data analysis to design intelligent image processing algorithms
+                    and apply artificial intelligence methods to remote sensing image interpretation.
                 `;
             }
         }

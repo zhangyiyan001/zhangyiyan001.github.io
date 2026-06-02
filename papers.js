@@ -21,7 +21,7 @@ const papersData = [
         modelImage: "images/models/multimodal-transformer-architecture.png",
         modelImageAlt: "Multimodal Transformer Network Architecture",
         // Citation data
-        citations: 103,  // 手动更新的引用次数
+        citations: 70,  // Google Scholar updated 2026-06-02
         googleScholarId: "citation_id_here",  // Google Scholar 文章ID（可选）
        
     },
@@ -43,13 +43,13 @@ const papersData = [
         modelImage: "images/models/dbs3tan-architecture.png",
         modelImageAlt: "DBS3TAN Network Architecture",
         // Citation data
-        citations: 24,
+        citations: 42,
         googleScholarId: "citation_id_here",
        
     },
     {
         id: 3,
-        title: "Depthwise Separable Convolutional Autoencoders for Hyperspectral Image Change Detection",
+        title: "Depthwise separable convolutional autoencoders for hyperspectral image change detection",
         authors: "Yiyan Zhang, Yongfeng Zhou, Shufang Xu, Hongmin Gao, Chenming Li, Qiqiang Zhong, Bing Zhang",
         venue: "IEEE Geoscience and Remote Sensing Letters",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8859",
@@ -65,7 +65,7 @@ const papersData = [
         modelImage: "images/models/dsconv-autoencoder-architecture.png",
         modelImageAlt: "DSConv Autoencoder Architecture",
         // Citation data
-        citations: 22,
+        citations: 28,
         googleScholarId: "citation_id_here",
         
     },
@@ -87,7 +87,7 @@ const papersData = [
         modelImage: "images/models/cmfaen-architecture.png",
         modelImageAlt: "CMFAEN Network Architecture",
         // Citation data
-        citations: 27,
+        citations: 44,
         googleScholarId: "citation_id_here"
     },
     {
@@ -108,7 +108,7 @@ const papersData = [
         modelImage: "images/models/amsfn-architecture.png",
         modelImageAlt: "AMSFN Network Architecture",
         // Citation data
-        citations: 0,
+        citations: 12,
         googleScholarId: "citation_id_here"
     },
     {
@@ -129,12 +129,12 @@ const papersData = [
         modelImage: "images/models/e-mamba-architecture.png",
         modelImageAlt: "E-Mamba Network Architecture",
         // Citation data
-        citations: 0,
+        citations: 16,
         googleScholarId: "citation_id_here"
     },
     {
         id: 7,
-        title: "AMSSE-Net: Adaptive multiscale spatial-spectral enhancement network for classification of hyperspectral and LiDAR data",
+        title: "AMSSE-Net: Adaptive multiscale spatial–spectral enhancement network for classification of hyperspectral and LiDAR data",
         authors: "Hongmin Gao, Hao Feng, Yiyan Zhang, Shufang Xu, Bing Zhang",
         venue: "IEEE Transactions on Geoscience and Remote Sensing",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36",
@@ -150,7 +150,7 @@ const papersData = [
         modelImage: "images/models/amsse-net.png",
         modelImageAlt: "AMSSE-Net Network Architecture",
         // Citation data
-        citations: 55,  // 请从 Google Scholar 获取实际引用次数
+        citations: 76,  // Google Scholar updated 2026-06-02
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -171,7 +171,7 @@ const papersData = [
         modelImage: "images/models/msa-gcn.png",
         modelImageAlt: 'msa-gcn network architecture',
         // Citation data
-        citations: 13,  // 请从 Google Scholar 获取实际引用次数
+        citations: 27,  // Google Scholar updated 2026-06-02
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -193,7 +193,7 @@ const papersData = [
         modelImage: "images/models/g2lhtd.png",
         modelImageAlt: "G2LHTD network architecture",
         // Citation data
-        citations: 82,
+        citations: 92,
         googleScholarId: "citation_id_here"
     },
     {
@@ -214,7 +214,7 @@ const papersData = [
         modelImage: 'images/models/dfcpc.png',
         modelImageAlt: 'dfcpc network architecture',
         // Citation data
-        citations: 4,  // 请从 Google Scholar 获取实际引用次数
+        citations: 10,  // Google Scholar updated 2026-06-02
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -235,7 +235,7 @@ const papersData = [
         modelImage: 'images/models/srgmgn.png',
         modelImageAlt: 'srgmgn network architecture',
         // Citation data
-        citations: 4,  // 请从 Google Scholar 获取实际引用次数
+        citations: 6,  // Google Scholar updated 2026-06-02
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     }
     
