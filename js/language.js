@@ -201,7 +201,7 @@ const translations = {
         },
         // Footer
         footer: {
-            welcome: "欢迎访问张依严的主页"
+            welcome: "欢迎访问张亦严的主页"
         },
         // Back to Top
         backToTop: "返回顶部"
