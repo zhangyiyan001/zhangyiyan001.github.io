@@ -34,17 +34,17 @@ function initDarkMode() {
     const savedTheme = localStorage.getItem('theme');
     console.log('Saved theme:', savedTheme);
 
-    // Set default theme to dark mode for all users
+    // Set default theme to light mode for first-time visitors
     if (savedTheme) {
         // If user has explicitly chosen a theme before, respect their choice
         htmlElement.setAttribute('data-theme', savedTheme);
         updateDarkModeIcon(savedTheme);
         console.log('Applied saved theme:', savedTheme);
     } else {
-        // New users get dark mode by default (regardless of system preference)
-        htmlElement.setAttribute('data-theme', 'dark');
-        updateDarkModeIcon('dark');
-        console.log('Applied default theme: dark mode');
+        // New users get light mode by default (regardless of system preference)
+        htmlElement.setAttribute('data-theme', 'light');
+        updateDarkModeIcon('light');
+        console.log('Applied default theme: light mode');
     }
 
     if (darkModeToggle) {
