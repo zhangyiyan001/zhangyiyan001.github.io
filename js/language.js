@@ -350,12 +350,16 @@ function updateHeroSection(t) {
             dingClone.textContent = currentLanguage === 'zh' ? '丁卫平院长' : 'Prof. Weiping Ding (丁卫平)';
             collegeClone.textContent = t.hero.collegeOf;
             hhuClone.textContent = currentLanguage === 'zh' ? '河海大学' : 'Hohai University';
+            const teamLinkText = currentLanguage === 'zh'
+                ? '不确定性人工智能与脑认知研究团队'
+                : 'Uncertainty Artificial Intelligence and Brain Cognition Research Team';
+            const teamLinkHtml = `<a href="http://www.uaibc.com/index/" target="_blank" rel="noopener noreferrer" class="supervisor-link">${teamLinkText}</a>`;
             // Keep professor names as is (no translation)
 
             // Rebuild the paragraph based on language
             if (currentLanguage === 'zh') {
                 introPara.innerHTML = `
-                    我目前是${ntuCollegeClone.outerHTML}的教师，并加入了不确定性人工智能与脑认知研究团队，团队负责人为
+                    我目前是${ntuCollegeClone.outerHTML}的教师，并加入${teamLinkHtml}，团队负责人为
                     ${dingClone.outerHTML}。
                     博士阶段毕业于${hhuClone.outerHTML}${collegeClone.outerHTML}，导师为
                     ${prof1Clone.outerHTML}
@@ -366,7 +370,7 @@ function updateHeroSection(t) {
             } else {
                 introPara.innerHTML = `
                     I am currently a faculty member at the ${ntuCollegeClone.outerHTML},
-                    and a member of the Uncertainty Artificial Intelligence and Brain Cognition Research Team led by
+                    and a member of the ${teamLinkHtml} led by
                     ${dingClone.outerHTML}.
                     I received my Ph.D. from the ${collegeClone.outerHTML}, ${hhuClone.outerHTML}, under the supervision of
                     ${prof1Clone.outerHTML}
@@ -494,4 +498,3 @@ if (typeof module !== 'undefined' && module.exports) {
         getCurrentTranslation
     };
 }
-
