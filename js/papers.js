@@ -15,7 +15,6 @@ const papersData = [
         doi: null,
         pdf: "https://ieeexplore.ieee.org/document/10145469",
         code: "https://github.com/zhangyiyan001/MTNet",
-        keywords: ["Feature extraction", "Transformers", "Hyperspectral and LiDAR Classification"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/multimodal-transformer-architecture.png",
@@ -37,7 +36,6 @@ const papersData = [
         doi: null,
         pdf: "https://www.sciencedirect.com/science/article/pii/S0957417423026271",
         code: "https://github.com/zhangyiyan001/DBS3TAN",
-        keywords: ["Hyperspectral change detection", "Dual-branch siamese network", "Spatial–spectral transformer", "Attention module", "CNN", "Change detection"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/dbs3tan-architecture.png",
@@ -59,7 +57,6 @@ const papersData = [
         doi: null,
         pdf: "https://ieeexplore.ieee.org/document/10138748",
         code: null,
-        keywords: ["Autoencoders", "Change Detection", "Depthwise Separable Convolutional", "Hyperspectral change detection"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/dsconv-autoencoder-architecture.png",
@@ -81,7 +78,6 @@ const papersData = [
         doi: null,
         pdf: "https://www.sciencedirect.com/science/article/pii/S0957417424020128",
         code: "https://github.com/zhangyiyan001/CMFAEN",
-        keywords: ["Image classification", "Land use and Land cover", "Cross-modal feature fusion", "Feature aggregation and enhancement"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/cmfaen-architecture.png",
@@ -102,7 +98,6 @@ const papersData = [
         doi: null,
         pdf: "https://www.sciencedirect.com/science/article/pii/S1566253525005615",
         code: "https://github.com/zhangyiyan001/AMSFN",
-        keywords: [ "Mamba", "Selective state space", "Multi-source fusion", "State space models", "Adaptive fusion"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/amsfn-architecture.png",
@@ -123,7 +118,6 @@ const papersData = [
         doi: null,
         pdf: "https://www.sciencedirect.com/science/article/pii/S1566253525007213",
         code: "https://github.com/zhangyiyan001/E-Mamba",
-        keywords: ["Selective scan mechanism", "Remote sensing", "Efficient networks", "State Space Model", "Cross-modal fusion", "Lightweight design"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/e-mamba-architecture.png",
@@ -144,7 +138,6 @@ const papersData = [
         doi: null,
         pdf: 'https://ieeexplore.ieee.org/document/10313328',  // 如果有 PDF 链接，请在此更新
         code: 'https://github.com/haofeng0003/AMSSE-Net',  // 如果有代码仓库，请在此更新
-        keywords: ["Multiscale feature extraction", "Spatial-spectral enhancement", "Feature fusion"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/amsse-net.png",
@@ -165,7 +158,6 @@ const papersData = [
         doi: null,
         pdf: 'https://ieeexplore.ieee.org/document/10693614',  // 如果有 PDF 链接，请在此更新
         code: 'https://github.com/haofeng0003/MSA-GCN',  // 如果有代码仓库，请在此更新
-        keywords: ["Multihead self-attention", "Graph convolution", "Interactive learning"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/msa-gcn.png",
@@ -187,7 +179,6 @@ const papersData = [
         doi: null,
         pdf: 'https://ieeexplore.ieee.org/abstract/document/9968036',
         code: 'https://github.com/zhonghaochen/G2LHTD_Master',
-        keywords: ["Target detection", "Hierarchical detection", "Global to local", "Hyperspectral image", "Detection algorithm", "Remote sensing"],
         // Model image fields
         hasModelImage: true,
         modelImage: "images/models/g2lhtd.png",
@@ -208,7 +199,6 @@ const papersData = [
         doi: null,
         pdf: 'https://ieeexplore.ieee.org/document/10745565/',  // 如果有 PDF 链接，请在此更新
         code: 'https://github.com/RogsDing/DFCPC',  // 如果有代码仓库，请在此更新
-        keywords: ["Contrastive learning", "Prototypical clustering", "Dual-feature attention", "Multimodal remote sensing", "Unsupervised learning"],
         // Model image fields
         hasModelImage: true,
         modelImage: 'images/models/dfcpc.png',
@@ -229,7 +219,6 @@ const papersData = [
         doi: null,
         pdf: 'https://ieeexplore.ieee.org/document/10770276',  // 如果有 PDF 链接，请在此更新
         code: 'https://github.com/zhangyiyan001/srgmgn',  // 如果有代码仓库，请在此更新
-        keywords: ["Change detection", "Residual graph", "Multiscale feature fusion", "Gated convolution", "Hyperspectral image"],
         // Model image fields
         hasModelImage: true,
         modelImage: 'images/models/srgmgn.png',
@@ -259,7 +248,18 @@ function isYiyanZhangFirstAuthor(authors) {
 
 // ===== Sort papers function =====
 function sortPapers(papers) {
+    const publicationOrder = [5, 6, 1, 2, 4, 3];
+
     return papers.sort((a, b) => {
+        const aOrder = publicationOrder.indexOf(a.id);
+        const bOrder = publicationOrder.indexOf(b.id);
+
+        if (aOrder !== -1 || bOrder !== -1) {
+            if (aOrder === -1) return 1;
+            if (bOrder === -1) return -1;
+            return aOrder - bOrder;
+        }
+
         const aIsFirstAuthor = isYiyanZhangFirstAuthor(a.authors);
         const bIsFirstAuthor = isYiyanZhangFirstAuthor(b.authors);
         
@@ -363,7 +363,7 @@ function createPaperCard(paper) {
                 <div class="publication-layout">
                     <!-- Left side: Publication information -->
                     <div class="publication-info">
-                        <div class="publication-header d-flex justify-content-between align-items-start mb-3">
+                        <div class="publication-header d-flex justify-content-between align-items-start">
                             <h4 class="publication-title flex-grow-1">
                                 <i class="fas ${typeIcon} me-2 text-${venueColor}"></i>
                                 ${paper.title}
@@ -371,12 +371,12 @@ function createPaperCard(paper) {
                             <span class="badge bg-${venueColor}">${typeText}</span>
                         </div>
 
-                        <div class="publication-meta mb-3">
-                            <div class="publication-authors mb-2">
+                        <div class="publication-meta">
+                            <div class="publication-authors">
                                 <i class="fas fa-user-friends me-2 text-muted"></i>
                                 <strong>${t.publications.authors}:</strong> ${highlightAuthor(paper.authors)}
                             </div>
-                            <div class="publication-venue mb-2">
+                            <div class="publication-venue">
                                 <i class="fas fa-book-open me-2 text-muted"></i>
                                 <strong>${paper.type === 'journal' ? t.publications.journal : t.publications.conference}:</strong>
                                 ${paper.venueUrl ?
@@ -386,11 +386,6 @@ function createPaperCard(paper) {
                                 ${paper.journalInfo ? `<span class="badge bg-success" style="font-size: 0.75em; font-weight: 500; margin-left: 8px;">${paper.journalInfo}</span>` : ''}
                                 ${paper.esiHighlyCited ? `<span class="badge bg-warning text-dark" style="font-size: 0.75em; font-weight: 600; margin-left: 8px;">${t.publications.esiHighlyCited}</span>` : ''}
                             </div>
-                        </div>
-
-                        <div class="publication-keywords mb-3">
-                            <i class="fas fa-tags me-2 text-muted"></i>
-                            ${paper.keywords.map(keyword => `<span class="keyword-tag-sm">${keyword}</span>`).join(' ')}
                         </div>
 
                         <div class="publication-links">

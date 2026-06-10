@@ -8,9 +8,17 @@ const socialLinks = {
     email: 'mailto:your-email@hhu.edu.cn' // Replace with actual email
 };
 
+// Google Scholar Metrics Configuration
+const scholarMetrics = {
+    totalCitations: 615, // Google Scholar 总被引数，手动更新
+    lastUpdated: '2026-06-10', // 数据更新日期
+    scholarUrl: 'https://scholar.google.com/citations?user=ALuJTwMAAAAJ&hl=zh-CN' // Google Scholar 主页链接
+};
+
 // Export for use in other files
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = socialLinks;
+    module.exports = { socialLinks, scholarMetrics };
 } else {
     window.socialLinks = socialLinks;
+    window.scholarMetrics = scholarMetrics;
 }

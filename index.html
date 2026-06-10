@@ -62,36 +62,8 @@
     <link href="css/local-icons.css" rel="stylesheet">
     <link href="css/personal-photo.css" rel="stylesheet">
 
-    <!-- About Me卡片主题适配样式 -->
+    <!-- Publication and profile link overrides -->
     <style>
-        /* 白天模式：确保文字可见 */
-        .about-card-text,
-        .about-card-text li {
-            color: #2d3748 !important;
-        }
-
-        /* 标题颜色 */
-        .about-card-title {
-            color: #0056b3 !important;
-        }
-
-        /* 暗黑模式：所有文字统一为浅色 */
-        [data-theme="dark"] .about-card-text,
-        [data-theme="dark"] .about-card-text li {
-            color: #e9ecef !important;
-        }
-
-        /* 暗黑模式：标题颜色 - 青色主题 */
-        [data-theme="dark"] .about-card-title {
-            color: #22d3ee !important;
-        }
-
-        /* 暗黑模式：调整卡片背景 - 青色主题 */
-        [data-theme="dark"] .about-card {
-            background: rgba(15, 45, 55, 0.6) !important;
-            border-color: rgba(34, 211, 238, 0.3) !important;
-        }
-
         /* 作者名字高亮样式 - 白天模式 */
         .publication-authors strong[style*="color: #0056b3"] {
             color: #0056b3 !important;
@@ -121,12 +93,17 @@
 
         /* 引用次数高亮显示 - 白天模式 */
         .citation-link-highlight {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.35rem !important;
             background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%) !important;
             color: white !important;
             border: none !important;
             font-weight: 500 !important;
             font-size: 0.75rem !important;
-            padding: 0.25rem 0.5rem !important;
+            line-height: 1 !important;
+            padding: 0.42rem 0.75rem !important;
             box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3) !important;
             transition: all 0.3s ease !important;
         }
@@ -135,16 +112,19 @@
             background: linear-gradient(135deg, #ff5252 0%, #f44336 100%) !important;
             box-shadow: 0 2px 6px rgba(255, 82, 82, 0.4) !important;
             transform: translateY(-1px) !important;
+            padding: 0.42rem 0.75rem !important;
             color: white !important;
         }
 
         .citation-link-highlight .citation-count {
             font-size: 0.95em !important;
             font-weight: 600 !important;
+            line-height: 1 !important;
         }
 
         .citation-link-highlight .citation-label {
             font-size: 0.85em !important;
+            line-height: 1 !important;
         }
 
         /* 引用次数高亮显示 - 暗黑模式 */
@@ -154,7 +134,7 @@
             border: none !important;
             font-weight: 600 !important;
             font-size: 0.75rem !important;
-            padding: 0.25rem 0.5rem !important;
+            padding: 0.42rem 0.75rem !important;
             box-shadow: 0 2px 4px rgba(255, 135, 135, 0.4) !important;
         }
 
@@ -162,16 +142,19 @@
             background: linear-gradient(135deg, #ffa8a8 0%, #ff8fab 100%) !important;
             box-shadow: 0 2px 6px rgba(255, 168, 168, 0.5) !important;
             transform: translateY(-1px) !important;
+            padding: 0.42rem 0.75rem !important;
             color: #0d0d0d !important;
         }
 
         [data-theme="dark"] .citation-link-highlight .citation-count {
             font-size: 0.95em !important;
             font-weight: 700 !important;
+            line-height: 1 !important;
         }
 
         [data-theme="dark"] .citation-link-highlight .citation-label {
             font-size: 0.85em !important;
+            line-height: 1 !important;
         }
 
         /* 导师链接样式 - 白天模式 - 强化版本 */
@@ -493,6 +476,16 @@
                                 Nantong University
 
                             </div>
+                            <!-- Scholar Metrics -->
+                            <div class="scholar-metrics mt-3" id="scholarMetrics">
+                                <a href="https://scholar.google.com/citations?user=ALuJTwMAAAAJ&hl=zh-CN"
+                                    class="scholar-metric-item" target="_blank" rel="noopener noreferrer"
+                                    title="View on Google Scholar">
+                                    <span class="scholar-metric-icon"><i class="fas fa-graduation-cap"></i></span>
+                                    <span class="scholar-metric-value" id="totalCitations">615</span>
+                                    <span class="scholar-metric-label" id="totalCitationsLabel">Citations</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -563,63 +556,6 @@
                 </div>
             </div>
 
-            <!-- About Me Content - Integrated and Compact -->
-            <div class="row mt-4" id="about">
-                <div class="col-12">
-                    <hr class="my-4" style="opacity: 0.15;">
-                    <h2 class="text-center mb-4" style="font-size: 1.6rem; font-weight: 600;">About Me</h2>
-
-                    <div class="row g-4">
-                        <!-- Research Focus -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="about-card h-100 p-3 rounded"
-                                style="background: linear-gradient(135deg, rgba(0, 123, 255, 0.03) 0%, rgba(102, 126, 234, 0.05) 100%); border: 1px solid rgba(0, 123, 255, 0.15); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
-                                <h4 class="about-card-title mb-3" style="font-size: 1.05rem; font-weight: 600;">
-                                    <i class="fas fa-microscope me-2"></i>Research Focus
-                                </h4>
-                                <p class="about-card-text"
-                                    style="font-size: 0.95rem; margin-bottom: 0; line-height: 1.6;">
-                                    My work focuses on improving the accuracy and efficiency of remote sensing
-                                    applications through advanced
-                                    machine learning algorithms and computer vision techniques.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Research Interests -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="about-card h-100 p-3 rounded"
-                                style="background: linear-gradient(135deg, rgba(0, 123, 255, 0.03) 0%, rgba(102, 126, 234, 0.05) 100%); border: 1px solid rgba(0, 123, 255, 0.15); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
-                                <h4 class="about-card-title mb-3" style="font-size: 1.05rem; font-weight: 600;">
-                                    <i class="fas fa-star me-2"></i>Research Interests
-                                </h4>
-                                <ul class="about-card-text"
-                                    style="font-size: 0.95rem; margin-bottom: 0; padding-left: 1.2rem; line-height: 1.6;">
-                                    <li>Artificial Intelligence & Deep Learning</li>
-                                    <li>Remote Sensing Image Processing</li>
-                                    <li>Computer Vision & Pattern Recognition</li>
-                                    <li>Geographic Information Systems</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Technical Expertise -->
-                        <div class="col-lg-4 col-md-12">
-                            <div class="about-card h-100 p-3 rounded"
-                                style="background: linear-gradient(135deg, rgba(0, 123, 255, 0.03) 0%, rgba(102, 126, 234, 0.05) 100%); border: 1px solid rgba(0, 123, 255, 0.15); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
-                                <h4 class="about-card-title mb-3" style="font-size: 1.05rem; font-weight: 600;">
-                                    <i class="fas fa-tools me-2"></i>Technical Expertise
-                                </h4>
-                                <p class="about-card-text"
-                                    style="font-size: 0.95rem; margin-bottom: 0; line-height: 1.6;">
-                                    Deep Learning, CNNs, Transformer architectures, Selective State Space Model,
-                                    Classification, Change Detection, Multi-scale Feature Fusion
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -898,6 +834,7 @@
 
     <!-- JavaScript Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/language.js"></script>
     <script src="js/main.js"></script>
     <script src="js/papers.js"></script>

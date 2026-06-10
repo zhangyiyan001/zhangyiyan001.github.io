@@ -24,7 +24,8 @@ const translations = {
             intro2: ", supervised by",
             intro3: "and",
             intro4: "My research focuses on integrating deep learning techniques with remote sensing data analysis to design intelligent image processing algorithms and apply artificial intelligence methods to remote sensing image interpretation.",
-            collegeOf: "College of Information Science and Engineering"
+            collegeOf: "College of Information Science and Engineering",
+            totalCitations: "Citations"
         },
         // Buttons
         buttons: {
@@ -32,21 +33,6 @@ const translations = {
             services: "Services",
             gallery: "Gallery",
             contact: "Contact"
-        },
-        // About Section
-        about: {
-            title: "About Me",
-            researchFocus: "Research Focus",
-            researchFocusText: "My work focuses on improving the accuracy and efficiency of remote sensing applications through advanced machine learning algorithms and computer vision techniques.",
-            researchInterests: "Research Interests",
-            interests: {
-                ai: "Artificial Intelligence & Deep Learning",
-                rs: "Remote Sensing Image Processing",
-                cv: "Computer Vision & Pattern Recognition",
-                gis: "Geographic Information Systems"
-            },
-            technicalExpertise: "Technical Expertise",
-            technicalText: "Deep Learning, CNNs, Transformer architectures, Selective State Space Model, Classification, Change Detection, Multi-scale Feature Fusion"
         },
         // Publications Section
         publications: {
@@ -126,7 +112,8 @@ const translations = {
             intro2: "的博士研究生，导师为",
             intro3: "教授和",
             intro4: "我的研究专注于将深度学习技术与遥感数据分析相结合，设计智能化的图像处理算法，将人工智能方法用于遥感图像解译工作。",
-            collegeOf: "信息科学与工程学院"
+            collegeOf: "信息科学与工程学院",
+            totalCitations: "总引用"
         },
         // Buttons
         buttons: {
@@ -134,21 +121,6 @@ const translations = {
             services: "学术服务",
             gallery: "图片展示",
             contact: "联系方式"
-        },
-        // About Section
-        about: {
-            title: "关于我",
-            researchFocus: "研究方向",
-            researchFocusText: "我的工作专注于通过先进的机器学习算法和计算机视觉技术提高遥感应用的准确性和效率。",
-            researchInterests: "研究兴趣",
-            interests: {
-                ai: "人工智能与深度学习",
-                rs: "遥感图像处理",
-                cv: "计算机视觉与模式识别",
-                gis: "地理信息系统"
-            },
-            technicalExpertise: "技术特长",
-            technicalText: "深度学习、卷积神经网络、Transformer架构、选择性状态空间模型、分类、变化检测、多尺度特征融合"
         },
         // Publications Section
         publications: {
@@ -218,10 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initLanguageSystem() {
     // Initializing language system
-    
+
     // Apply saved language
     applyLanguage(currentLanguage);
-    
+
     // Bind language toggle button
     const langToggle = document.getElementById('languageToggle');
     if (langToggle) {
@@ -236,13 +208,13 @@ function toggleLanguage() {
     localStorage.setItem('language', currentLanguage);
     applyLanguage(currentLanguage);
     updateLanguageButton();
-    
+
     // Trigger custom event for other components
     const event = new CustomEvent('languageChanged', {
         detail: { language: currentLanguage }
     });
     document.dispatchEvent(event);
-    
+
     // Language switched to: ${currentLanguage}
 }
 
@@ -252,7 +224,7 @@ function updateLanguageButton() {
     if (langToggle) {
         const icon = langToggle.querySelector('i');
         const text = langToggle.querySelector('.lang-text');
-        
+
         if (currentLanguage === 'zh') {
             if (icon) icon.className = 'fas fa-language';
             if (text) text.textContent = 'EN';
@@ -266,34 +238,31 @@ function updateLanguageButton() {
 // Apply language to all elements
 function applyLanguage(lang) {
     const t = translations[lang];
-    
+
     // Update HTML lang attribute
     document.documentElement.setAttribute('lang', lang);
-    
+
     // Navigation
     updateNavigation(t);
-    
+
     // Hero Section
     updateHeroSection(t);
-    
-    // About Section
-    updateAboutSection(t);
-    
+
     // Publications Section
     updatePublicationsSection(t);
-    
+
     // Services Section
     updateServicesSection(t);
-    
+
     // Gallery Section
     updateGallerySection(t);
-    
+
     // Contact Section
     updateContactSection(t);
-    
+
     // Footer
     updateFooter(t);
-    
+
     // Language applied: ${lang}
 }
 
@@ -306,7 +275,7 @@ function updateNavigation(t) {
         'gallery': t.nav.gallery,
         'contact': t.nav.contact
     };
-    
+
     Object.keys(navLinks).forEach(key => {
         const link = document.querySelector(`.nav-link[href="#${key}"]`);
         if (link) {
@@ -322,13 +291,13 @@ function updateHeroSection(t) {
     if (mainTitle) {
         mainTitle.textContent = t.hero.welcome;
     }
-    
+
     // Subtitle
     const subtitle = document.querySelector('.hero-content h2');
     if (subtitle) {
         subtitle.textContent = t.hero.title;
     }
-    
+
     // University
     const university = document.querySelector('.hero-content h3');
     if (university) {
@@ -350,7 +319,13 @@ function updateHeroSection(t) {
         const icon = profileUniversity.querySelector('i');
         profileUniversity.innerHTML = `${icon ? icon.outerHTML : '<i class="fas fa-university me-2"></i>'}\n                                ${t.hero.profileUniversity}`;
     }
-    
+
+    // Scholar metrics labels
+    const citationsLabel = document.getElementById('totalCitationsLabel');
+    if (citationsLabel) {
+        citationsLabel.textContent = t.hero.totalCitations;
+    }
+
     // Introduction paragraph - preserving links
     const introPara = document.querySelector('.hero-content p');
     if (introPara) {
@@ -403,13 +378,13 @@ function updateHeroSection(t) {
             }
         }
     }
-    
+
     // Navigation buttons
     const heroButtons = document.querySelectorAll('.hero-content a.btn');
     heroButtons.forEach(btn => {
         const href = btn.getAttribute('href');
         const icon = btn.querySelector('i');
-        
+
         if (href === '#publications') {
             btn.innerHTML = `${icon ? icon.outerHTML : ''} ${t.buttons.publications}`;
         } else if (href === '#services') {
@@ -422,80 +397,13 @@ function updateHeroSection(t) {
     });
 }
 
-// Update About Section
-function updateAboutSection(t) {
-    // About Me title
-    const aboutTitle = document.querySelector('#about h2');
-    if (aboutTitle) {
-        aboutTitle.textContent = t.about.title;
-    }
-    
-    // Get all about cards
-    const aboutCards = document.querySelectorAll('.about-card');
-    
-    if (aboutCards.length >= 3) {
-        // First card: Research Focus
-        const firstCard = aboutCards[0];
-        const firstTitle = firstCard.querySelector('h4');
-        const firstText = firstCard.querySelector('p');
-        
-        if (firstTitle) {
-            const icon = firstTitle.querySelector('i');
-            firstTitle.innerHTML = `${icon ? icon.outerHTML : ''} ${t.about.researchFocus}`;
-        }
-        
-        if (firstText) {
-            firstText.textContent = t.about.researchFocusText;
-        }
-        
-        // Second card: Research Interests
-        const secondCard = aboutCards[1];
-        const secondTitle = secondCard.querySelector('h4');
-        const interestsList = secondCard.querySelectorAll('ul li');
-        
-        if (secondTitle) {
-            const icon = secondTitle.querySelector('i');
-            secondTitle.innerHTML = `${icon ? icon.outerHTML : ''} ${t.about.researchInterests}`;
-        }
-        
-        if (interestsList.length > 0) {
-            const interestsArray = [
-                t.about.interests.ai,
-                t.about.interests.rs,
-                t.about.interests.cv,
-                t.about.interests.gis
-            ];
-            
-            interestsList.forEach((item, index) => {
-                if (index < interestsArray.length) {
-                    item.textContent = interestsArray[index];
-                }
-            });
-        }
-        
-        // Third card: Technical Expertise
-        const thirdCard = aboutCards[2];
-        const thirdTitle = thirdCard.querySelector('h4');
-        const thirdText = thirdCard.querySelector('p');
-        
-        if (thirdTitle) {
-            const icon = thirdTitle.querySelector('i');
-            thirdTitle.innerHTML = `${icon ? icon.outerHTML : ''} ${t.about.technicalExpertise}`;
-        }
-        
-        if (thirdText) {
-            thirdText.textContent = t.about.technicalText;
-        }
-    }
-}
-
 // Update Publications Section
 function updatePublicationsSection(t) {
     const pubTitle = document.querySelector('#publications h2');
     if (pubTitle) {
         pubTitle.textContent = t.publications.title;
     }
-    
+
     // Re-render publications with new language
     if (typeof papersData !== 'undefined' && typeof renderPapers === 'function') {
         renderPapers(sortPapers([...papersData]));
@@ -508,12 +416,12 @@ function updateServicesSection(t) {
     if (servicesTitle) {
         servicesTitle.textContent = t.services.title;
     }
-    
+
     const servicesSubtitle = document.querySelector('#services p.text-center');
     if (servicesSubtitle) {
         servicesSubtitle.textContent = t.services.subtitle;
     }
-    
+
     const journalReviewerTitle = document.querySelector('.service-card h3');
     if (journalReviewerTitle) {
         const icon = journalReviewerTitle.querySelector('i');
@@ -535,17 +443,17 @@ function updateContactSection(t) {
     if (contactTitle) {
         contactTitle.textContent = t.contact.title;
     }
-    
+
     const emailTitle = document.querySelector('#contact h4');
     if (emailTitle && emailTitle.textContent === 'Email') {
         emailTitle.textContent = t.contact.email;
     }
-    
+
     const findMeTitle = document.querySelectorAll('#contact h4')[1];
     if (findMeTitle) {
         findMeTitle.textContent = t.contact.findMeOn;
     }
-    
+
     // Social links text
     const socialTexts = document.querySelectorAll('.social-link-large span');
     socialTexts.forEach(span => {

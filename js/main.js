@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initGallery();
     initSocialLinks();
     initIconCompatibility();
+    initScholarMetrics();
 
     // 添加全局点击监听器用于调试
     document.body.addEventListener('click', function(e) {
@@ -1125,4 +1126,15 @@ window.debugDarkMode = debugDarkMode;
 // Initialize debug on page load (remove in production)
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     setTimeout(debugDarkMode, 2000);
+}
+
+// ===== Scholar Metrics Initialization =====
+function initScholarMetrics() {
+    if (typeof scholarMetrics === 'undefined') return;
+
+    const totalCitationsEl = document.getElementById('totalCitations');
+
+    if (totalCitationsEl && scholarMetrics.totalCitations !== undefined) {
+        totalCitationsEl.textContent = scholarMetrics.totalCitations;
+    }
 }
