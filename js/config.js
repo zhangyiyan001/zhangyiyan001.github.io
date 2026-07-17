@@ -10,8 +10,8 @@ const socialLinks = {
 
 // Google Scholar Metrics Configuration
 const scholarMetrics = {
-    totalCitations: 615, // Google Scholar 总被引数，手动更新
-    lastUpdated: '2026-06-10', // 数据更新日期
+    totalCitations: 668, // Google Scholar 总被引数，手动更新
+    lastUpdated: '2026-07-17', // 数据更新日期
     scholarUrl: 'https://scholar.google.com/citations?user=ALuJTwMAAAAJ&hl=zh-CN' // Google Scholar 主页链接
 };
 

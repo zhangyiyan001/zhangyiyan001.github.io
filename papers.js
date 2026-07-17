@@ -3,12 +3,32 @@
 // Sample publication data with model images
 const papersData = [
     {
+        id: 12,
+        title: "Seed-to-Semantics: Few-shot Prototype-Guided Progressive Learning for Hyperspectral and LiDAR Classification",
+        authors: "Yiyan Zhang, Hongmin Gao, Weiping Ding, Pedram Ghamisi, Chenkai Zhang, Zhonghao Chen, Bing Zhang",
+        venue: "IEEE Transactions on Image Processing",
+        venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83",
+        journalInfo: "(SCI, Q1, IF:15.3)",
+        year: 2026,
+        type: "journal",
+        doi: null,
+        pdf: "https://ieeexplore.ieee.org/document/11602747",
+        code: "https://github.com/zhangyiyan001/PGPL",
+        // Model image fields
+        hasModelImage: true,
+        modelImage: "images/models/seed-to-semantics.png",
+        modelImageAlt: "Seed-to-Semantics learning pipeline",
+        // Citation data
+        citations: 0,  // Google Scholar updated 2026-07-17
+        googleScholarId: "citation_id_here"
+    },
+    {
         id: 1,
         title: "Multimodal Transformer Network for Hyperspectral and LiDAR Classification",
         authors: "Yiyan Zhang, Shufang Xu, Danfeng Hong, Hongmin Gao, Chenkai Zhang, Meiqiao Bi, Chenming Li",
         venue: "IEEE Transactions on Geoscience and Remote Sensing",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36",
-        journalInfo: "(SCI, Q1, IF:8.6)",
+        journalInfo: "(SCI, Q1, IF:9.4)",
         esiHighlyCited: true,
         year: 2023,
         type: "journal",
@@ -20,7 +40,7 @@ const papersData = [
         modelImage: "images/models/multimodal-transformer-architecture.png",
         modelImageAlt: "Multimodal Transformer Network Architecture",
         // Citation data
-        citations: 70,  // Google Scholar updated 2026-06-02
+        citations: 71,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here",  // Google Scholar 文章ID（可选）
        
     },
@@ -30,7 +50,7 @@ const papersData = [
         authors: "Yiyan Zhang, Tingting Wang, Chenkai Zhang, Shufang Xu, Hongmin Gao, Chenming Li",
         venue: "Expert Systems with Applications",
         venueUrl: "https://www.sciencedirect.com/journal/expert-systems-with-applications",
-        journalInfo: "(SCI, Q1, IF:7.5)",
+        journalInfo: "(SCI, Q1, IF:9.4)",
         year: 2024,
         type: "journal",
         doi: null,
@@ -41,7 +61,7 @@ const papersData = [
         modelImage: "images/models/dbs3tan-architecture.png",
         modelImageAlt: "DBS3TAN Network Architecture",
         // Citation data
-        citations: 42,
+        citations: 47,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here",
        
     },
@@ -51,7 +71,7 @@ const papersData = [
         authors: "Yiyan Zhang, Yongfeng Zhou, Shufang Xu, Hongmin Gao, Chenming Li, Qiqiang Zhong, Bing Zhang",
         venue: "IEEE Geoscience and Remote Sensing Letters",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8859",
-        journalInfo: "(SCI, Q1, IF:4.4)",
+        journalInfo: "(SCI, Q1, IF:4.8)",
         year: 2023,
         type: "journal",    
         doi: null,
@@ -62,7 +82,7 @@ const papersData = [
         modelImage: "images/models/dsconv-autoencoder-architecture.png",
         modelImageAlt: "DSConv Autoencoder Architecture",
         // Citation data
-        citations: 28,
+        citations: 30,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here",
         
     },
@@ -72,7 +92,7 @@ const papersData = [
         authors: "Yiyan Zhang, Hongmin Gao, Zhou Jun, Chenkai Zhang, Pedram Ghamisi, Shufang Xu, Chenming Li, Bing Zhang",
         venue: "Expert Systems with Applications",
         venueUrl: "https://www.sciencedirect.com/journal/expert-systems-with-applications",
-        journalInfo: "(SCI, Q1, IF:7.5)",
+        journalInfo: "(SCI, Q1, IF:9.4)",
         year: 2024,
         type: "journal",
         doi: null,
@@ -83,7 +103,7 @@ const papersData = [
         modelImage: "images/models/cmfaen-architecture.png",
         modelImageAlt: "CMFAEN Network Architecture",
         // Citation data
-        citations: 44,
+        citations: 50,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here"
     },
     {
@@ -92,7 +112,7 @@ const papersData = [
         authors: "Yiyan Zhang, Hongmin Gao, Zhonghao Chen, Shuyu Fei, Jun Zhou, Pedram Ghamisi, Bing Zhang",
         venue: "Information Fusion",
         venueUrl: "https://www.sciencedirect.com/journal/information-fusion",
-        journalInfo: "(SCI, Q1, IF:15.5)",
+        journalInfo: "(SCI, Q1, IF:17.4)",
         year: 2026,
         type: "journal",
         doi: null,
@@ -103,7 +123,7 @@ const papersData = [
         modelImage: "images/models/amsfn-architecture.png",
         modelImageAlt: "AMSFN Network Architecture",
         // Citation data
-        citations: 12,
+        citations: 18,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here"
     },
     {
@@ -112,7 +132,7 @@ const papersData = [
         authors: "Yiyan Zhang, Hongmin Gao, Zhonghao Chen, Chenkai Zhang, Pedram Ghamisi, Bing Zhang",
         venue: "Information Fusion",
         venueUrl: "https://www.sciencedirect.com/journal/information-fusion",
-        journalInfo: "(SCI, Q1, IF:15.5)",
+        journalInfo: "(SCI, Q1, IF:17.4)",
         year: 2026,
         type: "journal",
         doi: null,
@@ -123,7 +143,7 @@ const papersData = [
         modelImage: "images/models/e-mamba-architecture.png",
         modelImageAlt: "E-Mamba Network Architecture",
         // Citation data
-        citations: 16,
+        citations: 22,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here"
     },
     {
@@ -132,7 +152,8 @@ const papersData = [
         authors: "Hongmin Gao, Hao Feng, Yiyan Zhang, Shufang Xu, Bing Zhang",
         venue: "IEEE Transactions on Geoscience and Remote Sensing",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36",
-        journalInfo: "(SCI, Q1, IF:8.6)",
+        journalInfo: "(SCI, Q1, IF:9.4)",
+        esiHighlyCited: true,
         year: 2023,
         type: "journal",
         doi: null,
@@ -143,7 +164,7 @@ const papersData = [
         modelImage: "images/models/amsse-net.png",
         modelImageAlt: "AMSSE-Net Network Architecture",
         // Citation data
-        citations: 76,  // Google Scholar updated 2026-06-02
+        citations: 80,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -152,7 +173,7 @@ const papersData = [
         authors: "Hongmin Gao, Hao Feng, Yiyan Zhang, Shuyu Fei, Runhua Shen, Shufang Xu, Bing Zhang",
         venue: "IEEE Transactions on Geoscience and Remote Sensing",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36",
-        journalInfo: "(SCI, Q1, IF:8.6)",
+        journalInfo: "(SCI, Q1, IF:9.4)",
         year: 2024,
         type: "journal",
         doi: null,
@@ -163,7 +184,7 @@ const papersData = [
         modelImage: "images/models/msa-gcn.png",
         modelImageAlt: 'msa-gcn network architecture',
         // Citation data
-        citations: 27,  // Google Scholar updated 2026-06-02
+        citations: 30,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -172,7 +193,7 @@ const papersData = [
         authors: "Zhonghao Chen, Zhengtao Lu, Hongmin Gao, Yiyan Zhang, Jia Zhao, Danfeng Hong, Bing Zhang",
         venue: "IEEE Transactions on Geoscience and Remote Sensing",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36",
-        journalInfo: "(SCI, Q1, IF:8.6)",
+        journalInfo: "(SCI, Q1, IF:9.4)",
         esiHighlyCited: true,
         year: 2022,
         type: "journal",
@@ -184,7 +205,7 @@ const papersData = [
         modelImage: "images/models/g2lhtd.png",
         modelImageAlt: "G2LHTD network architecture",
         // Citation data
-        citations: 92,
+        citations: 95,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here"
     },
     {
@@ -193,7 +214,7 @@ const papersData = [
         authors: "Shufang Xu, Xinchen Ding, Yiyan Zhang, Zhen Zhang, Hongmin Gao, Bing Zhang",
         venue: "IEEE Transactions on Geoscience and Remote Sensing",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36",
-        journalInfo: "(SCI, Q1, IF:8.6)",
+        journalInfo: "(SCI, Q1, IF:9.4)",
         year: 2024,
         type: "journal",
         doi: null,
@@ -204,7 +225,7 @@ const papersData = [
         modelImage: 'images/models/dfcpc.png',
         modelImageAlt: 'dfcpc network architecture',
         // Citation data
-        citations: 10,  // Google Scholar updated 2026-06-02
+        citations: 10,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -213,7 +234,7 @@ const papersData = [
         authors: "Shufang Xu, Xiangfei Xia, Haiwei Li, Yiyan Zhang, Runhua Sheng, Hongmin Gao, Bing Zhang",
         venue: "IEEE Transactions on Geoscience and Remote Sensing",
         venueUrl: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36",
-        journalInfo: "(SCI, Q1, IF:8.6)",
+        journalInfo: "(SCI, Q1, IF:9.4)",
         year: 2024,
         type: "journal",
         doi: null,
@@ -224,7 +245,7 @@ const papersData = [
         modelImage: 'images/models/srgmgn.png',
         modelImageAlt: 'srgmgn network architecture',
         // Citation data
-        citations: 6,  // Google Scholar updated 2026-06-02
+        citations: 10,  // Google Scholar updated 2026-07-17
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     }
     
@@ -235,7 +256,7 @@ const papersData = [
 // ===== Helper function to extract impact factor from journalInfo =====
 function extractImpactFactor(journalInfo) {
     if (!journalInfo) return 0;
-    // Extract IF value from string like "(SCI, Q1, IF:8.6)"
+    // Extract IF value from string like "(SCI, Q1, IF:9.4)"
     const match = journalInfo.match(/IF:\s*(\d+\.?\d*)/);
     return match ? parseFloat(match[1]) : 0;
 }
@@ -248,7 +269,7 @@ function isYiyanZhangFirstAuthor(authors) {
 
 // ===== Sort papers function =====
 function sortPapers(papers) {
-    const publicationOrder = [5, 6, 1, 2, 4, 3];
+    const publicationOrder = [12, 5, 6, 1, 2, 4, 3];
 
     return papers.sort((a, b) => {
         const aOrder = publicationOrder.indexOf(a.id);
