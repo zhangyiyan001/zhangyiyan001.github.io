@@ -330,7 +330,7 @@ function updateHeroSection(t) {
     const introPara = document.querySelector('.hero-content p');
     if (introPara) {
         const ntuCollegeLink = introPara.querySelector('a[href="https://ai.ntu.edu.cn/"]');
-        const dingLink = introPara.querySelector('a[href*="ai.ntu.edu.cn/2024/0817/c9718a246514/page.htm"]');
+        const dingLink = introPara.querySelector('a[href*="weiping-ding.github.io"]');
         const collegeLink = introPara.querySelector('a[href*="ise.hhu.edu.cn"]');
         const hhuLink = introPara.querySelector('a[href*="www.hhu.edu.cn"]');
         const prof1Link = introPara.querySelector('a[href*="ghm"]');
