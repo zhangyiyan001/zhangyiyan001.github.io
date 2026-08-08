@@ -19,7 +19,7 @@ const papersData = [
         modelImage: "images/models/seed-to-semantics.png",
         modelImageAlt: "Seed-to-Semantics learning pipeline",
         // Citation data
-        citations: 0,  // Google Scholar updated 2026-07-17
+        citations: 0,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"
     },
     {
@@ -40,7 +40,7 @@ const papersData = [
         modelImage: "images/models/multimodal-transformer-architecture.png",
         modelImageAlt: "Multimodal Transformer Network Architecture",
         // Citation data
-        citations: 71,  // Google Scholar updated 2026-07-17
+        citations: 73,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here",  // Google Scholar 文章ID（可选）
        
     },
@@ -61,7 +61,7 @@ const papersData = [
         modelImage: "images/models/dbs3tan-architecture.png",
         modelImageAlt: "DBS3TAN Network Architecture",
         // Citation data
-        citations: 47,  // Google Scholar updated 2026-07-17
+        citations: 50,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here",
        
     },
@@ -82,7 +82,7 @@ const papersData = [
         modelImage: "images/models/dsconv-autoencoder-architecture.png",
         modelImageAlt: "DSConv Autoencoder Architecture",
         // Citation data
-        citations: 30,  // Google Scholar updated 2026-07-17
+        citations: 30,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here",
         
     },
@@ -103,7 +103,7 @@ const papersData = [
         modelImage: "images/models/cmfaen-architecture.png",
         modelImageAlt: "CMFAEN Network Architecture",
         // Citation data
-        citations: 50,  // Google Scholar updated 2026-07-17
+        citations: 52,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"
     },
     {
@@ -123,7 +123,7 @@ const papersData = [
         modelImage: "images/models/amsfn-architecture.png",
         modelImageAlt: "AMSFN Network Architecture",
         // Citation data
-        citations: 18,  // Google Scholar updated 2026-07-17
+        citations: 21,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"
     },
     {
@@ -143,7 +143,7 @@ const papersData = [
         modelImage: "images/models/e-mamba-architecture.png",
         modelImageAlt: "E-Mamba Network Architecture",
         // Citation data
-        citations: 22,  // Google Scholar updated 2026-07-17
+        citations: 25,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"
     },
     {
@@ -164,7 +164,7 @@ const papersData = [
         modelImage: "images/models/amsse-net.png",
         modelImageAlt: "AMSSE-Net Network Architecture",
         // Citation data
-        citations: 80,  // Google Scholar updated 2026-07-17
+        citations: 83,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -184,7 +184,7 @@ const papersData = [
         modelImage: "images/models/msa-gcn.png",
         modelImageAlt: 'msa-gcn network architecture',
         // Citation data
-        citations: 30,  // Google Scholar updated 2026-07-17
+        citations: 30,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -205,7 +205,7 @@ const papersData = [
         modelImage: "images/models/g2lhtd.png",
         modelImageAlt: "G2LHTD network architecture",
         // Citation data
-        citations: 95,  // Google Scholar updated 2026-07-17
+        citations: 95,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"
     },
     {
@@ -225,7 +225,7 @@ const papersData = [
         modelImage: 'images/models/dfcpc.png',
         modelImageAlt: 'dfcpc network architecture',
         // Citation data
-        citations: 10,  // Google Scholar updated 2026-07-17
+        citations: 10,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
     },
     {
@@ -245,8 +245,187 @@ const papersData = [
         modelImage: 'images/models/srgmgn.png',
         modelImageAlt: 'srgmgn network architecture',
         // Citation data
-        citations: 10,  // Google Scholar updated 2026-07-17
+        citations: 10,  // Google Scholar updated 2026-08-08
         googleScholarId: "citation_id_here"  // 请更新为实际的 Google Scholar ID
+    },
+    {
+        id: 13,
+        title: "A multiscale dual-branch feature fusion and attention network for hyperspectral images classification",
+        authors: "Hongmin Gao, Yiyan Zhang, Zhonghao Chen, Chenming Li",
+        venue: "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+        journalInfo: "Vol. 14, pp. 8180-8192",
+        year: 2021,
+        type: "journal",
+        pdf: "https://doi.org/10.1109/JSTARS.2021.3103176",
+        code: null,
+        hasModelImage: true,
+        modelImage: "images/models/msdbfa-framework.gif",
+        modelImageAlt: "Overall flowchart of the proposed MSDBFA",
+        citations: 56
+    },
+    {
+        id: 14,
+        title: "Dynamic data augmentation method for hyperspectral image classification based on siamese structure",
+        authors: "Hongmin Gao, Junpeng Zhang, Xueying Cao, Zhonghao Chen, Yiyan Zhang, Chenming Li",
+        venue: "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+        journalInfo: "Vol. 14, pp. 8063-8076",
+        year: 2021,
+        type: "journal",
+        pdf: "https://doi.org/10.1109/JSTARS.2021.3102610",
+        code: null,
+        hasModelImage: true,
+        modelImage: "images/models/dynamic-data-augmentation-framework.gif",
+        modelImageAlt: "Training framework of the dynamic data augmentation method",
+        citations: 20
+    },
+    {
+        id: 15,
+        title: "Adaptively dictionary construction for hyperspectral target detection",
+        authors: "Chenming Li, Weibo Zhang, Yiyan Zhang, Zhonghao Chen, Hongmin Gao",
+        venue: "IEEE Geoscience and Remote Sensing Letters",
+        journalInfo: "Vol. 20, pp. 1-5",
+        year: 2023,
+        type: "journal",
+        pdf: "https://doi.org/10.1109/LGRS.2023.3247793",
+        code: null,
+        citations: 18
+    },
+    {
+        id: 16,
+        title: "Multiscale spectral-spatial cross-extraction network for hyperspectral image classification",
+        authors: "Hongmin Gao, Hongyi Wu, Zhonghao Chen, Yunfei Zhang, Yiyan Zhang, Chenming Li",
+        venue: "IET Image Processing",
+        journalInfo: "Vol. 16, No. 3, pp. 755-771",
+        year: 2022,
+        type: "journal",
+        pdf: "https://doi.org/10.1049/ipr2.12382",
+        code: null,
+        citations: 6
+    },
+    {
+        id: 17,
+        title: "Fusion network for local and global features extraction for hyperspectral image classification",
+        authors: "Hongmin Gao, Hongyi Wu, Zhonghao Chen, Yiyan Zhang, Shufang Xu",
+        venue: "International Journal of Remote Sensing",
+        journalInfo: "Vol. 43, No. 10, pp. 3843-3867",
+        year: 2022,
+        type: "journal",
+        pdf: "https://doi.org/10.1080/01431161.2022.2102952",
+        code: null,
+        citations: 5
+    },
+    {
+        id: 18,
+        title: "A 3D-2D multibranch feature fusion and dense attention network for hyperspectral image classification",
+        authors: "Hongmin Gao, Yiyan Zhang, Yunfei Zhang, Zhonghao Chen, Chenming Li, Hui Zhou",
+        venue: "Micromachines",
+        journalInfo: "Vol. 12, No. 10, 1271",
+        year: 2021,
+        type: "journal",
+        pdf: "https://doi.org/10.3390/mi12101271",
+        code: null,
+        hasModelImage: true,
+        modelImage: "images/models/3d-2d-multibranch-framework.png",
+        modelImageAlt: "Overall architecture of the 3D-2D multibranch feature fusion network",
+        citations: 5
+    },
+    {
+        id: 19,
+        title: "MDA-HTD: Mask-driven dual autoencoders meet hyperspectral target detection",
+        authors: "Zhonghao Chen, Hongmin Gao, Zhengtao Lu, Yiyan Zhang, Yao Ding, Xin Li, Bing Zhang",
+        venue: "Information Processing & Management",
+        journalInfo: "Vol. 62, No. 4, 104106",
+        year: 2025,
+        type: "journal",
+        pdf: "https://doi.org/10.1016/j.ipm.2025.104106",
+        code: null,
+        citations: 34
+    },
+    {
+        id: 20,
+        title: "Airborne small target detection method based on multimodal and adaptive feature fusion",
+        authors: "Shufang Xu, Xu Chen, Haiwei Li, Tianci Liu, Zhonghao Chen, Hongmin Gao, Yiyan Zhang",
+        venue: "IEEE Transactions on Geoscience and Remote Sensing",
+        journalInfo: "Vol. 62, pp. 1-15",
+        year: 2024,
+        type: "journal",
+        pdf: "https://doi.org/10.1109/TGRS.2024.3443856",
+        code: null,
+        citations: 44
+    },
+    {
+        id: 21,
+        title: "A novel 3D hyperchaotic map coupled with discrete tangent memristor: Dynamic analysis, DSP implementation, and image encryption application",
+        authors: "Chenkai Zhang, Huibin Wang, Yiyan Zhang",
+        venue: "Expert Systems with Applications",
+        journalInfo: "Vol. 286, 128091",
+        year: 2025,
+        type: "journal",
+        pdf: "https://doi.org/10.1016/j.eswa.2025.128091",
+        code: null,
+        citations: 10
+    },
+    {
+        id: 22,
+        title: "DualMamba: Joint Classification of Hyperspectral and LiDAR Data Using State Space Models",
+        authors: "Yiyan Zhang, Hongmin Gao, Zhonghao Chen, Shuyu Fei, Shufang Xu, Jun Zhou",
+        venue: "IGARSS 2025 - IEEE International Geoscience and Remote Sensing Symposium",
+        journalInfo: "pp. 2160-2163",
+        year: 2025,
+        type: "conference",
+        pdf: "https://doi.org/10.1109/IGARSS55030.2025.11314057",
+        code: null,
+        citations: 0
+    },
+    {
+        id: 23,
+        title: "Dynamics analysis and DSP implementation of a new four-dimensional discrete memristor hyperchaotic map",
+        authors: "Chenkai Zhang, Huibin Wang, Yiyan Zhang, Lili Zhang, Chunyan Ma",
+        venue: "Integration",
+        journalInfo: "Vol. 103, 102384",
+        year: 2025,
+        type: "journal",
+        pdf: "https://doi.org/10.1016/j.vlsi.2025.102384",
+        code: null,
+        citations: 2
+    },
+    {
+        id: 24,
+        title: "Dynamics analysis of 3D hyperchaotic map based on discrete Hopfield neural network coupled discrete cosine memristor",
+        authors: "Chenkai Zhang, Huibin Wang, Yiyan Zhang, Chunyan Ma",
+        venue: "Integration",
+        journalInfo: "102579",
+        year: 2025,
+        type: "journal",
+        pdf: "https://doi.org/10.1016/j.vlsi.2025.102579",
+        code: null,
+        citations: 4
+    },
+    {
+        id: 25,
+        title: "Interactive Siamese spatial-spectral cross-layer fusion transformer for hyperspectral image change detection",
+        authors: "Chenming Li, Xingyu Feng, Yiyan Zhang, Hongmin Gao, Zhonghao Chen, Shufang Xu",
+        venue: "International Journal of Remote Sensing",
+        journalInfo: "Vol. 45, No. 17, pp. 5737-5760",
+        year: 2024,
+        type: "journal",
+        pdf: "https://doi.org/10.1080/01431161.2024.2379516",
+        code: null,
+        citations: 3
+    },
+    {
+        id: 26,
+        title: "Lightweight KAN Convolution Spectral-Spatial Network with Purification Window for Hyperspectral Anomaly Detection",
+        authors: "Shufang Xu, Yifan Liu, Yiyan Zhang, Hongmin Gao",
+        venue: "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+        year: 2026,
+        type: "journal",
+        pdf: "https://doi.org/10.1109/JSTARS.2026.3659858",
+        code: null,
+        hasModelImage: true,
+        modelImage: "images/models/kssn-framework.gif",
+        modelImageAlt: "Flowchart of the proposed KSSN method for hyperspectral anomaly detection",
+        citations: 0
     }
     
 ];
@@ -312,13 +491,6 @@ function sortPapers(papers) {
 // Initialize papers system
 document.addEventListener('DOMContentLoaded', function() {
     initPapersSystem();
-    
-    // Listen for language changes
-    document.addEventListener('languageChanged', function(e) {
-        console.log('Language changed, re-rendering publications...');
-        const sortedPapers = sortPapers([...papersData]);
-        renderPapers(sortedPapers);
-    });
 });
 
 function initPapersSystem() {
