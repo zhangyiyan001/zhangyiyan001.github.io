@@ -57,7 +57,8 @@
             <p class="publication-authors">${highlightedAuthors(paper.authors)}</p>
             <p class="publication-meta">
               <span class="publication-venue">${escapeHtml(paper.venue)}</span>
-              ${paper.journalInfo ? `<span>${escapeHtml(paper.journalInfo.replace(/[()]/g, ""))}</span>` : ""}
+              ${paper.journalInfo ? `<span>${escapeHtml(paper.journalInfo.replace(/[()]/g, "").replace("2026 JCR ", ""))}</span>` : ""}
+              ${paper.publicationDetails ? `<span>${escapeHtml(paper.publicationDetails)}</span>` : ""}
               ${paper.esiHighlyCited ? '<span class="publication-badge">ESI Highly Cited</span>' : ""}
             </p>
           </div>
